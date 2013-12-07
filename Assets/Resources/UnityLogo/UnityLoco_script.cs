@@ -20,7 +20,7 @@ public class UnityLoco_script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // 往右移動
-        if (this.gameObject.guiTexture.pixelInset.x <= this.x1 && this.coroutinCalled==false)
+        if (this.gameObject.guiTexture.pixelInset.x <= this.x1 && this.coroutinCalled == false)
         {
             this.canLeft = false;
             this.coroutinCalled = true;
@@ -32,7 +32,7 @@ public class UnityLoco_script : MonoBehaviour {
             this.guiSet.x -= Time.deltaTime * 200;
             this.gameObject.guiTexture.pixelInset = this.guiSet;
         }
-        else if (this.canRight == true && this.gameObject.guiTexture.pixelInset.x <=this.x0)
+        else if (this.canRight == true && this.gameObject.guiTexture.pixelInset.x <= this.x0)
         {
             this.guiSet.x += Time.deltaTime * 200;
             this.gameObject.guiTexture.pixelInset = this.guiSet;

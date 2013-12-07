@@ -18,8 +18,14 @@ public class scoreboard : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+        if (main.gameOnOrOff)
+        {
+            this.score+=1;
+            setScore(this.score);
+        }
 	}
 
+    // 設定分數的副程式
     void setScore(int score) {
         this.clearNumber();
         this.score = score;
@@ -33,10 +39,11 @@ public class scoreboard : MonoBehaviour
         }
     }
 
+    // 清除數字的副程式
     void clearNumber() {
         int childCount = this.gameObject.transform.childCount;
         for (int i = 0; i < childCount; i++) {
-            if(this.gameObject.transform.GetChild(i).gameObject.active==true)
+            if(this.gameObject.transform.GetChild(i).gameObject.activeInHierarchy)
                 Destroy(this.gameObject.transform.GetChild(i).gameObject);
         }
     }
